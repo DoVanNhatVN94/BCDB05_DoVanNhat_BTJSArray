@@ -60,12 +60,17 @@ document.getElementById("btnDoiCho2ViTri").onclick = function () {
     var num = 0;
     var x = Number(document.getElementById("inpViTriX").value);
     var y = Number(document.getElementById("inpViTriY").value);
-    for (var i = 0; i < mang.length; i++)
-        a[i] = mang[i];
-    num = a[x];
-    a[x] = a[y];
-    a[y] = num;
-    document.getElementById("txtBai6").innerHTML = "Mảng sau khi thay đổi :" + a;
+    if (x > mang.length-1 || y > mang.length-1)
+        alert("Nhập lại x,y ");
+    else {
+        for (var i = 0; i < mang.length; i++)
+            a[i] = mang[i];
+        num = a[x];
+        a[x] = a[y];
+        a[y] = num;
+        document.getElementById("txtBai6").innerHTML = "Mảng sau khi thay đổi :" + a;
+    }
+
 }
 
 document.getElementById("btnXapXepTangDan").onclick = function () {
