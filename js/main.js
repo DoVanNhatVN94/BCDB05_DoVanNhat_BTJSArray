@@ -13,7 +13,7 @@ document.getElementById("btnTinhTong").onclick = function () {
         if (mang[i] > 0)
             sum += mang[i];
 
-    document.getElementById("txtBai1").innerHTML = "Tổng các số trong mảng " + sum;
+    document.getElementById("txtBai1").innerHTML = "Tổng các số trong mảng: " + sum;
 }
 
 document.getElementById("btnDemSoDuong").onclick = function () {
@@ -22,7 +22,7 @@ document.getElementById("btnDemSoDuong").onclick = function () {
         if (mang[i] > 0)
             count++;
 
-    document.getElementById("txtBai2").innerHTML = "Có bao nhieu so duong trong mảng " + count;
+    document.getElementById("txtBai2").innerHTML = "Có bao nhieu so duong trong mảng: " + count;
 
 }
 document.getElementById("btnTimSoNhoNhat").onclick = function () {
@@ -30,7 +30,7 @@ document.getElementById("btnTimSoNhoNhat").onclick = function () {
     for (var i = 0; i < mang.length; i++)
         if (a > mang[i])
             a = mang[i];
-    document.getElementById("txtBai3").innerHTML = "Số nhỏ nhất trong mảng là " + a;
+    document.getElementById("txtBai3").innerHTML = "Số nhỏ nhất trong mảng là: " + a;
 
 }
 
@@ -40,7 +40,7 @@ document.getElementById("btnTimSoDuongNhoNhat").onclick = function () {
         if (mang[i] > 0 && a > mang[i])
             a = mang[i];
 
-    document.getElementById("txtBai4").innerHTML = "Số dương nhỏ nhất trong mảng là " + a;
+    document.getElementById("txtBai4").innerHTML = "Số dương nhỏ nhất trong mảng là: " + a;
 }
 
 document.getElementById("btnTimSoChanCuoiCung").onclick = function () {
@@ -52,7 +52,7 @@ document.getElementById("btnTimSoChanCuoiCung").onclick = function () {
     if (a % 2 != 0)
         a = -1;
 
-    document.getElementById("txtBai5").innerHTML = "Số chăn cuois cùng là " + a;
+    document.getElementById("txtBai5").innerHTML = "Số chẵn cuối cùng là: " + a;
 
 }
 document.getElementById("btnDoiCho2ViTri").onclick = function () {
@@ -60,7 +60,7 @@ document.getElementById("btnDoiCho2ViTri").onclick = function () {
     var num = 0;
     var x = Number(document.getElementById("inpViTriX").value);
     var y = Number(document.getElementById("inpViTriY").value);
-    if (x > mang.length-1 || y > mang.length-1)
+    if (x > mang.length - 1 || y > mang.length - 1)
         alert("Nhập lại x,y ");
     else {
         for (var i = 0; i < mang.length; i++)
@@ -86,7 +86,7 @@ document.getElementById("btnXapXepTangDan").onclick = function () {
                 a[j] = a[j + 1];
                 a[j + 1] = num;
             }
-    document.getElementById("txtBai7").innerHTML = "Mảng sau khi xap xep :" + a;
+    document.getElementById("txtBai7").innerHTML = "Mảng sau khi xap xep: " + a;
 }
 
 document.getElementById("btnTimSoNguyenTo").onclick = function () {
@@ -105,12 +105,15 @@ function kiemTraSNT(n) {
     if (n < 2)
         return 1;
     else {
-        for (var i = 2; i < n / 2; i++)
-            if (n % i == 0)
-                return 1;
-        return 0;
+        for (var i = 2; i <=n/2; i++)
+        if (n % i == 0)
+            return 1;
     }
+    return 0;
+
+
 }
+
 
 var mang2 = [];
 console.log("mang moi : " + mang2);
@@ -126,7 +129,7 @@ document.getElementById("btnDemSoNguyen").onclick = function () {
         if (Number.isInteger(mang2[i]) == true)
             count++;
 
-    document.getElementById("txtBai9").innerHTML = "Các số nguyên trong mảng là " + count;
+    document.getElementById("txtBai9").innerHTML = "Các số nguyên trong mảng là: " + count;
 
 }
 document.getElementById("btnSoSanhAD").onclick = function () {
@@ -142,7 +145,10 @@ document.getElementById("btnSoSanhAD").onclick = function () {
         document.getElementById("txtBai10").innerHTML = "Số dương > Số âm";
     else if (countD < countA)
         document.getElementById("txtBai10").innerHTML = "Số âm > Số dương";
+    else if (mang.length == 0)
+        document.getElementById("txtBai10").innerHTML = "Mảng Rỗng, kiểm tra lại mảng !";
     else if (countD == countA)
-        document.getElementById("txtBai10").innerHTML = "Số âm = Số dương"
+        document.getElementById("txtBai10").innerHTML = "Số âm = Số dương";
+
 
 }
